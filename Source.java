@@ -1,7 +1,7 @@
 class Node<T> {
     T val;
     Node<T> next;
-    
+
     public Node(T val) {
       this.val = val;
       this.next = null;
@@ -10,7 +10,12 @@ class Node<T> {
   
   class Source {
     public static <T> boolean linkedListFind(Node<T> head, T target) {
-      // todo
+      while (head != null) {
+          if (target.equals(head.val)) {
+              return true;
+          }
+          head = head.next;
+      }
       return false;
     }
     
@@ -29,5 +34,4 @@ class Node<T> {
         System.out.println(Source.linkedListFind(a, "c"));
         
     }
-
   }
