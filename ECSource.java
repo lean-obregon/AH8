@@ -12,16 +12,15 @@ import java.util.ArrayList;
 
 class ECSource {
   public static <T> T getNodeValue(Node<T> head, int index) {
-    ArrayList<String> values = new ArrayList<>();
+    ArrayList<String> list = new ArrayList<>();
 
     while (head != null) {
-      values.add((String)head.val);
-      if (index >= 0) {
-        return (T)values.get(index);
+      list.add((String)head.val);
+      if (list.size() > index) {
+        return (T) list.get(index);
       }
       head = head.next;
     }
-
     return null;
   }
   
